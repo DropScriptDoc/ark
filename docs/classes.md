@@ -4,11 +4,11 @@ This page lists the available classes that can be used in your scripts.
 ## Color
 - Constructors
     - `Color()`
-        - Constructs an empty Color.
+        - Constructs an empty Color object.
     - `Color(const uint8 r, const uint8 g, const uint8 b, const uint8 a)`
-        - Constructs a Color and sets the r, g, b and a fields.
+        - Constructs a Color object and sets the r, g, b and a fields.
     - `Color(const Vector2& other)`
-        - Constructs a Color from another Color.
+        - Constructs a Color object from another Color object.
 - Destructors
     - `~Color()`
         - Destructs a Color object.
@@ -152,11 +152,11 @@ This class is not used for anything at the moment.
 ## Vector2
 - Constructors
     - `Vector2()`
-        - Constructs an empty Vector2.
+        - Constructs an empty Vector2 object.
     - `Vector2(const float x, const float y)`
-        - Constructs a Vector2 and sets the x and y fields.
+        - Constructs a Vector2 object and sets the x and y fields.
     - `Vector2(const Vector2& other)`
-        - Constructs a Vector2 from another Vector2.
+        - Constructs a Vector2 object from another Vector2 object.
 - Destructors
     - `~Vector2()`
         - Destructs a Vector2 object.
@@ -167,7 +167,7 @@ This class is not used for anything at the moment.
 ## Vector3
 - Constructors
     - `Vector3()`
-        - Constructs an empty Vector3.
+        - Constructs an empty Vector3 object.
     - `Vector3(const float x, const float y, const float z)`
         - Constructs a Vector3 object and sets the x, y and z fields.
     - `Vector3(const Vector3& other)`
