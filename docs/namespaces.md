@@ -40,19 +40,31 @@ This page lists the available namespaces that can be used in your scripts.
         - Returns whether or not the specified key was pressed. The available vKey codes are listed [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
 
 ## Memory
-The functions below dereference the specified address as the specified type.
 - Functions
-    - `int8 readInt8(uint64 address)`
-    - `int16 readInt16(uint64 address)`
-    - `int readInt32(uint64 address)`
-    - `int64 readInt64(uint64 address)`
-    - `uint8 readUint8(uint64 address)`
-    - `uint16 readUint16(uint64 address)`
-    - `uint readUint32(uint64 address)`
-    - `uint64 readUint64(uint64 address)`
-    - `float readFloat(uint64 address)`
-    - `double readDouble(uint64 address)`
-    - `bool readBool(uint64 address)`
+    - The functions below dereference the specified address as the specified type.
+        - `int8 readInt8(uint64 address)`
+        - `int16 readInt16(uint64 address)`
+        - `int readInt32(uint64 address)`
+        - `int64 readInt64(uint64 address)`
+        - `uint8 readUint8(uint64 address)`
+        - `uint16 readUint16(uint64 address)`
+        - `uint readUint32(uint64 address)`
+        - `uint64 readUint64(uint64 address)`
+        - `float readFloat(uint64 address)`
+        - `double readDouble(uint64 address)`
+        - `bool readBool(uint64 address)`
+    - The functions below set the value at the specified address with the specified type.
+        - `void writeInt8(uint64 address, int8 value)`
+        - `void writeInt16(uint64 address, int16 value)`
+        - `void writeInt32(uint64 address, int value)`
+        - `void writeInt64(uint64 address, int64 value)`
+        - `void writeUint8(uint64 address, uint8 value)`
+        - `void writeUint16(uint64 address, uint16 value)`
+        - `void writeUint32(uint64 address, uint32 value)`
+        - `void writeUint64(uint64 address, uint64 value)`
+        - `void writeFloat(uint64 address, float value)`
+        - `void writeDouble(uint64 address, double value)`
+        - `void writeBool(uint64 address, bool value)`
 
 ## Modules
 - Classes
