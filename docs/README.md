@@ -2,7 +2,8 @@
 
 ## Introduction
 >The scripting engine being used in DropCheats' ARK product is AngelScript.<br>
-You can read more about it [here](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html).
+You can read more about it and its datatypes [here](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html).
+The array and string extensions are implemented.
 
 To use or create a script, create a file in `%appdata%` with the file extension `.sdc1`, such as `C:/Users/Unreal/AppData/Roaming/test.sdc1`
 > ![Test script loaded in menu](https://i.imgur.com/tupEUx3.png)
