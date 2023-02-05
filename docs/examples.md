@@ -25,3 +25,14 @@ void main() {
 }
 ```
 > ![Creating and using GUI elements image](https://i.imgur.com/em6xkYT.png)
+
+## Rendering Actors
+```clike
+void onActor(Actor& actor) { 
+    Vector2 screenPos;
+    if (actor.getLocation().toScreen(screenPos)) {
+        Render::Text(Fonts::getEspFont(), screenPos, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, actor.getObjectName()); 
+    }
+}
+```
+> ![Rendering Actors](https://i.imgur.com/ipi5q5g.png)
