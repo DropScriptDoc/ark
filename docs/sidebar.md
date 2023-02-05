@@ -2,5 +2,4 @@
 - [Callbacks](callbacks)
 - [Namespaces](namespaces)
 - [Classes](classes)
-- [Functions](functions)
 - [Example scripts](examples)
