@@ -1,7 +1,6 @@
 # Getting started
 
 ## Introduction
-
 >The scripting engine being used in DropCheats' ARK product is AngelScript.<br>
 You can read more about it [here](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html).
 
@@ -12,7 +11,6 @@ After creating the file, refresh the scripts list in the menu, and your newly cr
 Click `Load script` to load the script.
 
 ## Creating your first script
-
 Lets render some text on the screen as our first script. To do so, there are so called `Callbacks` which the application will call to execute your code.
 The most familiar one being `main`; it will get executed as soon as your script loads.<br>
 However, DropCheats' ARK product also provides an `onRender` callback, which we will be using to render primitives on the screen. For more callbacks, take a look [here](/callbacks).
