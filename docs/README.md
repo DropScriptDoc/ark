@@ -19,14 +19,18 @@ However, DropCheats' ARK product also provides an `onRender` callback, which we 
 
 1. Let's get started by creating our script file `text.sdc1`.
 2. Now, lets declare the `onRender` callback, which we will be putting our rendering code in later.
-```cpp
+```clike
 void onRender() {
     
 }
 ```
-3. To render text on the screen, lets invoke the `Render::Text` function. More about it here.
+3. To render text on the screen, lets invoke the `Render::Text` function. More about the arguments provided to the function here.
 ```clike
 void onRender() {
     Render::Text(Fonts::getMenuTextFont(), Vector2(50, 50), Color(255, 255, 255, 255), Render::OUTLINE, "Hello World!");
 }
 ```
+4. Load the script and enjoy the fruits of it!
+> ![First script loaded](https://i.imgur.com/KFCCBl2.png)
+
+Obviously this is a very simple script, but hopefully it shows the potential. If you're interested, take a look around on this site. Everything the scripting engine supports is documented here.
