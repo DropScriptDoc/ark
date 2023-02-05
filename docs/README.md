@@ -22,7 +22,7 @@ void onRender() {
     
 }
 ```
-3. To render text on the screen, lets invoke the `Render::Text` function. More about the arguments provided to the function here.
+3. To render text on the screen, lets invoke the [`Render::Text`](/namespaces?id=render) function.
 ```clike
 void onRender() {
     Render::Text(Fonts::getMenuTextFont(), Vector2(50, 50), Color(255, 255, 255, 255), Render::OUTLINE, "Hello World!");
