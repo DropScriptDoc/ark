@@ -18,13 +18,13 @@ However, DropCheats' ARK product also provides an `onRender` callback, which we 
 
 1. Let's get started by creating our script file `text.sdc1`.
 2. Now, lets declare the `onRender` callback, which we will be putting our rendering code in later.
-```clike
+```angelscript
 void onRender() {
     
 }
 ```
 3. To render text on the screen, lets invoke the [`Render::Text`](/namespaces?id=render) function.
-```clike
+```angelscript
 void onRender() {
     Render::Text(Fonts::getMenuTextFont(), Vector2(50, 50), Color(255, 255, 255, 255), Render::OUTLINE, "Hello World!");
 }

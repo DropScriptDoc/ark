@@ -35,7 +35,7 @@ This page lists the available classes that can be used in your scripts.
         - Adds the specified text to the next free space in the GUI.
     - `Button& addButton(const string& label, int width, Gui::GuiButtonClb @clb)`
         - Adds a button to the next free space in the GUI. Width is a percentage of the available horizontal space. Example:
-        ```clike
+        ```angelscript
         groupbox.addButton("Click me!", 100, function() { 
             // this code gets executed when the user clicks the button
         })
@@ -62,7 +62,7 @@ This page lists the available classes that can be used in your scripts.
         - Adds the specified text to the next free space in the GUI.
     - `Button& addButton(const string& label, int width, Gui::GuiButtonClb @clb)`
         - Adds a button to the next free space in the GUI. Width is a percentage of the available horizontal space. Example:
-        ```clike
+        ```angelscript
         groupbox.addButton("Click me!", 100, function() { 
             // this code gets executed when the user clicks the button
         })
@@ -91,7 +91,7 @@ This page lists the available classes that can be used in your scripts.
         - Adds the specified text to the next free space in the GUI.
     - `Button& addButton(const string& label, int width, Gui::GuiButtonClb @clb)`
         - Adds a button to the next free space in the GUI. Width is a percentage of the available horizontal space. Example:
-        ```clike
+        ```angelscript
         groupbox.addButton("Click me!", 100, function() { 
             // this code gets executed when the user clicks the button
         })
@@ -180,7 +180,7 @@ This class is not used for anything at the moment.
 - Methods
     - `bool toScreen(Vector2& screenPosition)`
         - Converts the 3D world position to a position on the screen. Example:
-        ```clike
+        ```angelscript
         Vector2 screenPosition;
         if (worldPosition.toScreen(screenPosition)) {
             // do something with the screen position
@@ -206,7 +206,7 @@ This class is not used for anything at the moment.
 - Methods
     - `Address Absolute(uint8 offset = 0)`
         - Adds a dereferenced signed integer at the specified offset to the address and returns it in a new Address object. Useful for pattern scanning. The responsible C++ code looks somewhat like this.
-        ```clike
+        ```angelscript
         int relative_offset = *(signed int*)(this->address + offset);
 		this->address += offset + sizeof(signed int) + relative_offset;
         ```
@@ -214,7 +214,7 @@ This class is not used for anything at the moment.
         - Adds the specified value to the address, and returns it in a new Address object.
     - `Address findPattern(const string& idaStylePattern)`
         - Finds the specified IDA style pattern in memory, and returns it in a new Address object. Example:
-        ```clike
+        ```angelscript
         address = address.findPattern("48 8D 05 ? ? ? ? 48 89 1D");
         ```
     - `Address Reference(int idx = 0)`
@@ -229,7 +229,7 @@ This class is not used for anything at the moment.
 - Methods
     - `Address findPattern(const string& idaStylePattern, uint64 start = 0, uint64 end = 0)`
         - Finds the specified IDA style pattern in memory (within the start and end bounds if specified), and returns it in a new Address object. Example:
-        ```clike
+        ```angelscript
         Address address = Modules::Main().findPattern("48 8D 05 ? ? ? ? 48 89 1D");
         ```
     - `uint64 getStart()`
@@ -247,12 +247,12 @@ This class is not used for anything at the moment.
         - Returns whether or not the actor inherits from the compare class. Useful for actor filtering. Take a look at [this example](/examples?id=filtering-actors).
     - `string getString(const string& className, const string& fieldName)`
         - Returns the FString value stored at the specified field in the specified class. Use [this site](https://ark.dumps.host) to find the class and field names. (It expects the class name without the A or U prefix.) Example:
-        ```clike
+        ```angelscript
         string dinoName = dino.getString("PrimalCharacter", "DescriptiveName");
         ```
     - `int getInt(const string& className, const string& fieldName)`
         - Returns the integer value stored at the specified field in the specified class. Use [this site](https://ark.dumps.host) to find the class and field names. (It expects the class name without the A or U prefix.) Example:
-        ```clike
+        ```angelscript
         int targetingTeam = actor.getInt("Actor", "TargetingTeam");
         ```
     - `string getObjectName()`

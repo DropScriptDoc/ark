@@ -3,7 +3,7 @@ There are a few callbacks that can be used in your scripts. These callbacks will
 
 ## main
 Called once whenever your script gets loaded.
-```clike
+```angelscript
 void main() {
 
 }
@@ -11,7 +11,7 @@ void main() {
 
 ## onRender
 Called every frame, you can only use the [Render](/namespaces?id=render) functions from within this callback.
-```clike
+```angelscript
 void onRender() {
 
 }
@@ -19,7 +19,7 @@ void onRender() {
 
 ## onActor
 Called for every [Actor](/classes?id=actor) that gets looped over by the application.
-```clike
+```angelscript
 void onActor(Actor& actor) {
 
 }

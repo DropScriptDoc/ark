@@ -84,7 +84,7 @@ This page lists the available namespaces that can be used in your scripts.
         - Returns the size of the screen in pixels.
     - `void Text(const Fonts::Font& font, const Vector2& pos, const Color& color, int flags, const string& text)`
         - Renders text at the specified position with the specified color, using the specified font. The globals listed below can be used as flags. Example:
-        ```clike
+        ```angelscript
         Render::Text(Fonts::getMenuTextFont(), Vector(100, 100), Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, "Hello World!");
         ```
 - Globals

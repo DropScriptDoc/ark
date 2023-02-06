@@ -2,7 +2,7 @@
 This page provides a few example scripts. If you've made a useful script and think it can help people understand the scripting language, let Unreal know and it might be added here.
 
 ## GUI Elements
-```clike
+```angelscript
 bool drawText = false;
 Color textColor = Color(255, 255, 255, 255);
 
@@ -27,7 +27,7 @@ void main() {
 > ![Creating and using GUI elements image](https://i.imgur.com/em6xkYT.png)
 
 ## Creating a toggleable Window
-```clike
+```angelscript
 Gui::Window@ scriptWindow = null;
 void main() {
     Vector2 windowSize = Vector2(600, 400);
@@ -48,7 +48,7 @@ void onRender() {
 > ![Creating a toggleable Window](https://i.imgur.com/KQvyYJm.png)
 
 ## Rendering Actors
-```clike
+```angelscript
 void onActor(Actor& actor) { 
     Vector2 screenPos;
     if (actor.getLocation().toScreen(screenPos)) {
@@ -60,7 +60,7 @@ void onActor(Actor& actor) {
 
 ## Filtering Actors
 This script shows how to filter actors, and renders a simple name esp.
-```clike
+```angelscript
 uint64 playerClass = 0;
 uint64 dinoClass = 0;
 
