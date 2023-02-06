@@ -36,3 +36,47 @@ void onActor(Actor& actor) {
 }
 ```
 > ![Rendering Actors](https://i.imgur.com/ipi5q5g.png)
+
+## Filtering Actors
+This script shows how to filter actors, and renders a simple name esp.
+```clike
+uint64 playerClass = 0;
+uint64 dinoClass = 0;
+
+void main() {
+    // Initialize the actor classes, we do this in the main callback as we should only do this once.
+    // Finding an Unreal Engine object can be inefficient.
+    playerClass = Engine::findObject("Class ShooterGame.ShooterCharacter");
+    dinoClass = Engine::findObject("Class ShooterGame.PrimalDinoCharacter");
+}
+
+void renderPlayerEsp(Actor& player) {
+    Vector2 screenPosition;
+    if (player.getLocation().toScreen(screenPosition)) {
+        // Because the actor inherits from the player class (ShooterCharacter) we can access the PlayerName field.
+        string playerName = player.getString("ShooterCharacter", "PlayerName");
+        Render::Text(Fonts::getEspFont(), screenPosition, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, playerName);
+    }
+}
+
+void renderDinoEsp(Actor& dino) {
+    Vector2 screenPosition;
+    if (dino.getLocation().toScreen(screenPosition)) {
+        // Because the actor inherits from the dino class (PrimalDinoCharacter), which inherits from PrimalCharacter we can access the DescriptiveName field.
+        string dinoName = dino.getString("PrimalCharacter", "DescriptiveName");
+        Render::Text(Fonts::getEspFont(), screenPosition, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, dinoName);
+    }
+}
+
+void onActor(Actor& actor) {
+    // Using the isA function to check if the actor inherits from the specified class.
+    if (actor.isA(playerClass)) {
+        // Actor inherits from the player class, so we can render the player esp.
+        renderPlayerEsp(actor);
+    } else if (actor.isA(dinoClass)) {
+        // Actor inherits from the dino class, so we can render the dino esp.
+        renderDinoEsp(actor);
+    }
+}
+```
+> ![Filtering Actors](https://i.imgur.com/E01Dd0K.png)

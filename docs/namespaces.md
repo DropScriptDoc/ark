@@ -94,3 +94,8 @@ This page lists the available namespaces that can be used in your scripts.
         - Can be used with the `Render::Text` function. Aligns the text to the right.
     - `int OUTLINE`
         - Can be used with the `Render::Text` function. Adds an outline to the text.
+
+## Engine
+- Functions
+    - `uint64 findObject(const string& fullObjectName)`
+        - Returns a pointer to the static class casted as an uint64. Useful for actor filtering. Take a look at [this example](/examples?id=filtering-actors).

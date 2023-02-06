@@ -241,6 +241,13 @@ This class is not used for anything at the moment.
 - Methods
     - `Vector3 getLocation()`
         - Returns the 3D location of the actor in the worlds.
+    - `bool isA(const uint64 compareClass)`
+        - Returns whether or not the actor inherits from the compare class. Useful for actor filtering. Take a look at [this example](/examples?id=filtering-actors).
+    - `string getString(const string& className, const string& fieldName)`
+        - Returns the FString value stored at the specified field in the specified class. Use [this site](https://ark.dumps.host) to find the class and field names. (It expects the class name without the A or U prefix.) Example:
+        ```clike
+        string dinoName = dino.getString("PrimalCharacter", "DescriptiveName");
+        ```
     - `int getInt(const string& className, const string& fieldName)`
         - Returns the integer value stored at the specified field in the specified class. Use [this site](https://ark.dumps.host) to find the class and field names. (It expects the class name without the A or U prefix.) Example:
         ```clike
