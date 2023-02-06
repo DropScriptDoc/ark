@@ -5,13 +5,13 @@ This page lists the available namespaces that can be used in your scripts.
 - Classes
     - [`Font`](/classes?id=font)
 - Functions
-    - `Font& getMenuTextFont()`
+    - `Font& GetMenuTextFont()`
         - Returns the font that's used for text in the menu.
-    - `Font& getMenuWindowTitleFont()`
+    - `Font& GetMenuWindowTitleFont()`
         - Returns the font that's used for the menu window title.
-    - `Font& getMenuTitleFont()`
+    - `Font& GetMenuTitleFont()`
         - Returns the font that's used for the menu title.
-    - `Font& getEspFont()`
+    - `Font& GetEspFont()`
         - Returns the font that's used for the esp.
 
 ## Gui
@@ -27,46 +27,46 @@ This page lists the available namespaces that can be used in your scripts.
     - [`Button`](/classes?id=button)
     - [`Text`](/classes?id=text)
 - Functions
-    - `Window& getMainWindow()`
+    - `Window& GetMainWindow()`
         - Returns the main GUI window.
-    - `Window& addWindow(const string& windowName, const string& statusBarText, const Vector2& pos, const Vector2& size)`
+    - `Window& AddWindow(const string& windowName, const string& statusBarText, const Vector2& pos, const Vector2& size)`
         - Adds a window to the GUI. Position and size are in absolute screen pixels.
-    - `void setWindowOpened(const Window& in, const bool opened)`
+    - `void SetWindowOpened(const Window& in, const bool opened)`
         - Opens or closes the specified window. Brings it to the foreground if opened.
 
 ## Input
 - Functions
-    - `bool keyDown(int vKey)`
+    - `bool KeyDown(int vKey)`
         - Returns whether or not the specified key is being held down. The available vKey codes are listed [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
-    - `bool keyPressed(int vKey)`
+    - `bool KeyPressed(int vKey)`
         - Returns whether or not the specified key was pressed. The available vKey codes are listed [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
 
 ## Memory
 - Functions
     - The functions below dereference the specified address as the specified type.
-        - `int8 readInt8(uint64 address)`
-        - `int16 readInt16(uint64 address)`
-        - `int readInt32(uint64 address)`
-        - `int64 readInt64(uint64 address)`
-        - `uint8 readUint8(uint64 address)`
-        - `uint16 readUint16(uint64 address)`
-        - `uint readUint32(uint64 address)`
-        - `uint64 readUint64(uint64 address)`
-        - `float readFloat(uint64 address)`
-        - `double readDouble(uint64 address)`
-        - `bool readBool(uint64 address)`
+        - `int8 ReadInt8(uint64 address)`
+        - `int16 ReadInt16(uint64 address)`
+        - `int ReadInt32(uint64 address)`
+        - `int64 ReadInt64(uint64 address)`
+        - `uint8 ReadUint8(uint64 address)`
+        - `uint16 ReadUint16(uint64 address)`
+        - `uint ReadUint32(uint64 address)`
+        - `uint64 ReadUint64(uint64 address)`
+        - `float ReadFloat(uint64 address)`
+        - `double ReadDouble(uint64 address)`
+        - `bool ReadBool(uint64 address)`
     - The functions below set the value at the specified address with the specified type.
-        - `void writeInt8(uint64 address, int8 value)`
-        - `void writeInt16(uint64 address, int16 value)`
-        - `void writeInt32(uint64 address, int value)`
-        - `void writeInt64(uint64 address, int64 value)`
-        - `void writeUint8(uint64 address, uint8 value)`
-        - `void writeUint16(uint64 address, uint16 value)`
-        - `void writeUint32(uint64 address, uint32 value)`
-        - `void writeUint64(uint64 address, uint64 value)`
-        - `void writeFloat(uint64 address, float value)`
-        - `void writeDouble(uint64 address, double value)`
-        - `void writeBool(uint64 address, bool value)`
+        - `void WriteInt8(uint64 address, int8 value)`
+        - `void WriteInt16(uint64 address, int16 value)`
+        - `void WriteInt32(uint64 address, int value)`
+        - `void WriteInt64(uint64 address, int64 value)`
+        - `void WriteUint8(uint64 address, uint8 value)`
+        - `void WriteUint16(uint64 address, uint16 value)`
+        - `void WriteUint32(uint64 address, uint32 value)`
+        - `void WriteUint64(uint64 address, uint64 value)`
+        - `void WriteFloat(uint64 address, float value)`
+        - `void WriteDouble(uint64 address, double value)`
+        - `void WriteBool(uint64 address, bool value)`
 
 ## Modules
 - Classes
@@ -80,13 +80,45 @@ This page lists the available namespaces that can be used in your scripts.
 
 ## Render
 - Functions
-    - `Vector2 getScreenSize()`
-        - Returns the size of the screen in pixels.
+    - `void PushClipRect(const Vector2& min, const Vector2& max, bool intersect = false)`
+        - Pushes a new clipping rectangle. Every render call after this will be rendered inside of the rectangle. If intersect is true, the function will automatically clamp the new clipping rect to be inside the previous clipping rect.
+    - `void PopClipRect()`
+        - Pops the last clipping rectangle. The rendering rectangle is restored to what it was before the last clipping rectangle got pushed.
+    - `void GetClipRect(float& x, float& y, float& w, float& h)`
+        - Gets the currently active clipping rectangle.
+    - `void Line(const Vector2& p1, const Vector2& p2, const Color& color, const float thickness = 1.f)`
+        - Renders a line from point 1 to point 2, with the specified color and thickness.
+    - `void Rectangle(const Vector2& min, const Vector2& max, const Color& color, const float rounding = 0.f, const int drawFlags = 0, const float thickness = 1.f)`
+        - Renders a rectangle between the min and max points. Can optionally render a rounded rectangle. Example:
+        ```angelscript
+        Render::Rectangle(Vector2(100, 100), Vector2(200, 200), Color(255, 255, 255, 255), 8.f, Render::ROUND_CORNERS_TOP_LEFT | Render::ROUND_CORNERS_TOP_RIGHT | Render::ROUND_CORNERS_BOT_LEFT | Render::ROUND_CORNERS_BOT_RIGHT);
+        ```
+    - `void RectangleFilled(const Vector2& min, const Vector2& max, const Color& color, const float rounding = 0.f, const int drawFlags = 0)`
+        - Renders a filled rectangle between the min and max points. Can optionally render a rounded rectangle.
+    - `void RectangleFilledMultiColor(const Vector2& min, const Vector2& max, const Color& colorTopLeft, const Color& colorTopRight, const Color& colorBotLeft, const Color& colorBotRight)`
+        - Renders a filled gradient rectangle between the min and max points. Can optionally render a rounded rectangle.
+    - `void ShadowRectangle(const Vector2& min, const Vector2& max, const Color& color, const float thickness, const Vector2& offset, const float rounding = 0, const int drawFlags = 0)`
+        - Renders a shadow rectangle between the min and max points.
+    - `void TriangleFilled(const Vector2& p1, const Vector2& p2, const Vector2& p3, const Color& color)`
+        - Renders a filled triangle with the specified points and color.
+    - `void Circle(const Vector2& center, const float radius, const Color& color, const float thickness = 1.f)`
+        - Renders a circle around the center point with the specified radius, color and thickness.
+    - `void CircleFilled(const Vector2& center, const float radius, const Color& color)`
+        - Renders a filled circle around the center point with the specified radius and color.
+    - `void Arc(const Vector2& center, const float radius, const float arcMin, const float arcMax, const Color& color, float thickness = 1.f)`
+        - Renders an arc around the center point with the specified radius, color and thickness. The arcs curvature can be controlled with arcMin and arcMax.
     - `void Text(const Fonts::Font& font, const Vector2& pos, const Color& color, int flags, const string& text)`
         - Renders text at the specified position with the specified color, using the specified font. The globals listed below can be used as flags. Example:
         ```angelscript
-        Render::Text(Fonts::getMenuTextFont(), Vector(100, 100), Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, "Hello World!");
+        Render::Text(Fonts::GetMenuTextFont(), Vector(100, 100), Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, "Hello World!");
         ```
+    - `Vector2 TextSize(const Fonts::Font& font, const string& text)`
+        - Returns the text size in pixels.
+        ```angelscript
+        Vector2 size = Render::TextSize(Fonts::GetMenuTextFont(), "Hello World!");
+        ```
+    - `Vector2 GetScreenSize()`
+        - Returns the size of the screen in pixels.
 - Globals
     - `int CENTER_X`
         - Can be used with the `Render::Text` function. Centers the text horizontally.
@@ -96,8 +128,16 @@ This page lists the available namespaces that can be used in your scripts.
         - Can be used with the `Render::Text` function. Aligns the text to the right.
     - `int OUTLINE`
         - Can be used with the `Render::Text` function. Adds an outline to the text.
+    - `int ROUND_CORNERS_TOP_LEFT`
+        - Can be used with rectangles. Makes the top left corner rounded.
+    - `int ROUND_CORNERS_TOP_RIGHT`
+        - Can be used with rectangles. Makes the top right corner rounded.
+    - `int ROUND_CORNERS_BOT_LEFT`
+        - Can be used with rectangles. Makes the bot left corner rounded.
+    - `int ROUND_CORNERS_BOT_RIGHT`
+        - Can be used with rectangles. Makes the bot right corner rounded.
 
 ## Engine
 - Functions
-    - `uint64 findObject(const string& fullObjectName)`
+    - `uint64 FindObject(const string& fullObjectName)`
         - Returns a pointer to the static class casted as an uint64. Useful for actor filtering. Take a look at [this example](/examples?id=filtering-actors).

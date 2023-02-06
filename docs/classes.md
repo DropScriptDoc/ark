@@ -21,118 +21,118 @@ This page lists the available classes that can be used in your scripts.
 ## Font
 `In namespace: Fonts`
 - Methods
-    - `float getSize()`
+    - `float GetSize()`
         - Returns the size of the font.
-    - `float setSize(float newSize)`
+    - `float SetSize(float newSize)`
         - Sets the size of the font.
-    - `float getRowHeight()`
+    - `float GetRowHeight()`
         - Returns the row height of the font.
 
 ## Groupbox
 `In namespace: Gui`
 - Methods
-    - `Text& addText(const string& text)`
+    - `Text& AddText(const string& text)`
         - Adds the specified text to the next free space in the GUI.
-    - `Button& addButton(const string& label, int width, Gui::GuiButtonClb @clb)`
+    - `Button& AddButton(const string& label, int width, Gui::GuiButtonClb @clb)`
         - Adds a button to the next free space in the GUI. Width is a percentage of the available horizontal space. Example:
         ```angelscript
-        groupbox.addButton("Click me!", 100, function() { 
+        groupbox.AddButton("Click me!", 100, function() { 
             // this code gets executed when the user clicks the button
         })
         ```
-    - `Textbox& addTextbox(const string& label, const string& value)`
+    - `Textbox& AddTextbox(const string& label, const string& value)`
         - Adds a textbox to the next free space in the GUI.
-    - `Listbox& addListbox(const string& label, const array<string>& elements, int& selectedIndex, const Vector2& size)`
+    - `Listbox& AddListbox(const string& label, const array<string>& elements, int& selectedIndex, const Vector2& size)`
         - Adds a listbox to the next free space in the GUI. Size is a percentage of the available space.
-    - `Combobox& addCombobox(const string& label, const array<string>& elements, int& selectedIndex)`
+    - `Combobox& AddCombobox(const string& label, const array<string>& elements, int& selectedIndex)`
         - Adds a combobox to the next free space in the GUI.
-    - `Slider& addSlider(const string& label, float& value, float min, float max)`
+    - `Slider& AddSlider(const string& label, float& value, float min, float max)`
         - Adds a slider to the next free space in the GUI.
-    - `Checkbox& addCheckbox(const string& label, bool& checked)`
+    - `Checkbox& AddCheckbox(const string& label, bool& checked)`
         - Adds a checkbox to the next free space in the GUI.
-    - `Groupbox& addGroupbox(const string& label, const Vector2& size)`
+    - `Groupbox& AddGroupbox(const string& label, const Vector2& size)`
         - Adds a groupbox to the next free space in the GUI. Size is a percentage of the available space.
-    - `Tab& addTab(const string& label)`
+    - `Tab& AddTab(const string& label)`
         - Adds a tab to the next free space in the GUI.
 
 ## Tab
 `In namespace: Gui`
 - Methods
-    - `Text& addText(const string& text)`
+    - `Text& AddText(const string& text)`
         - Adds the specified text to the next free space in the GUI.
-    - `Button& addButton(const string& label, int width, Gui::GuiButtonClb @clb)`
+    - `Button& AddButton(const string& label, int width, Gui::GuiButtonClb @clb)`
         - Adds a button to the next free space in the GUI. Width is a percentage of the available horizontal space. Example:
         ```angelscript
-        groupbox.addButton("Click me!", 100, function() { 
+        groupbox.AddButton("Click me!", 100, function() { 
             // this code gets executed when the user clicks the button
         })
         ```
-    - `Textbox& addTextbox(const string& label, const string& value)`
+    - `Textbox& AddTextbox(const string& label, const string& value)`
         - Adds a textbox to the next free space in the GUI.
-    - `Listbox& addListbox(const string& label, const array<string>& elements, int& selectedIndex, const Vector2& size)`
+    - `Listbox& AddListbox(const string& label, const array<string>& elements, int& selectedIndex, const Vector2& size)`
         - Adds a listbox to the next free space in the GUI. Size is a percentage of the available space.
-    - `Combobox& addCombobox(const string& label, const array<string>& elements, int& selectedIndex)`
+    - `Combobox& AddCombobox(const string& label, const array<string>& elements, int& selectedIndex)`
         - Adds a combobox to the next free space in the GUI.
-    - `Slider& addSlider(const string& label, float& value, float min, float max)`
+    - `Slider& AddSlider(const string& label, float& value, float min, float max)`
         - Adds a slider to the next free space in the GUI.
-    - `Checkbox& addCheckbox(const string& label, bool& checked)`
+    - `Checkbox& AddCheckbox(const string& label, bool& checked)`
         - Adds a checkbox to the next free space in the GUI.
-    - `Groupbox& addGroupbox(const string& label, const Vector2& size)`
+    - `Groupbox& AddGroupbox(const string& label, const Vector2& size)`
         - Adds a groupbox to the next free space in the GUI. Size is a percentage of the available space.
-    - `Tab& addTab(const string& label)`
+    - `Tab& AddTab(const string& label)`
         - Adds a tab to the next free space in the GUI.
 
 ## Window
 `In namespace: Gui`
 - Methods
-    - `bool isOpen()`
+    - `bool IsOpen()`
         - Returns whether or not the window is opened.
-    - `Text& addText(const string& text)`
+    - `Text& AddText(const string& text)`
         - Adds the specified text to the next free space in the GUI.
-    - `Button& addButton(const string& label, int width, Gui::GuiButtonClb @clb)`
+    - `Button& AddButton(const string& label, int width, Gui::GuiButtonClb @clb)`
         - Adds a button to the next free space in the GUI. Width is a percentage of the available horizontal space. Example:
         ```angelscript
-        groupbox.addButton("Click me!", 100, function() { 
+        groupbox.AddButton("Click me!", 100, function() { 
             // this code gets executed when the user clicks the button
         })
         ```
-    - `Textbox& addTextbox(const string& label, const string& value)`
+    - `Textbox& AddTextbox(const string& label, const string& value)`
         - Adds a textbox to the next free space in the GUI.
-    - `Listbox& addListbox(const string& label, const array<string>& elements, int& selectedIndex, const Vector2& size)`
+    - `Listbox& AddListbox(const string& label, const array<string>& elements, int& selectedIndex, const Vector2& size)`
         - Adds a listbox to the next free space in the GUI. Size is a percentage of the available space.
-    - `Combobox& addCombobox(const string& label, const array<string>& elements, int& selectedIndex)`
+    - `Combobox& AddCombobox(const string& label, const array<string>& elements, int& selectedIndex)`
         - Adds a combobox to the next free space in the GUI.
-    - `Slider& addSlider(const string& label, float& value, float min, float max)`
+    - `Slider& AddSlider(const string& label, float& value, float min, float max)`
         - Adds a slider to the next free space in the GUI.
-    - `Checkbox& addCheckbox(const string& label, bool& checked)`
+    - `Checkbox& AddCheckbox(const string& label, bool& checked)`
         - Adds a checkbox to the next free space in the GUI.
-    - `Groupbox& addGroupbox(const string& label, const Vector2& size)`
+    - `Groupbox& AddGroupbox(const string& label, const Vector2& size)`
         - Adds a groupbox to the next free space in the GUI. Size is a percentage of the available space.
-    - `Tab& addTab(const string& label)`
+    - `Tab& AddTab(const string& label)`
         - Adds a tab to the next free space in the GUI.
 
 ## Checkbox
 `In namespace: Gui`
 - Methods
-    - `void addColorPicker(const string& label, Color& color)`
+    - `void AddColorPicker(const string& label, Color& color)`
         - Adds a color picker to the checkbox.
-    - `void addKeyPicker(int& vKey)`
+    - `void AddKeyPicker(int& vKey)`
         - Adds a key picker to the checkbox. The available vKey codes are listed [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
 
 ## Text
 `In namespace: Gui`
 - Methods
-    - `void addColorPicker(const string& label, Color& color)`
+    - `void AddColorPicker(const string& label, Color& color)`
         - Adds a color picker to the text.
-    - `void addKeyPicker(int& vKey)`
+    - `void AddKeyPicker(int& vKey)`
         - Adds a key picker to the text. The available vKey codes are listed [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
 
 ## Textbox
 `In namespace: Gui`
 - Methods
-    - `void setMaxStringLength(int length)`
+    - `void SetMaxStringLength(int length)`
         - Sets the maximum length of the string in the textbox.
-    - `void setStringNumericOnly(bool numericOnly)`
+    - `void SetStringNumericOnly(bool numericOnly)`
         - Sets whether or not only numeric characters are allowed in the string of the textbox.
 
 ## Slider
@@ -178,11 +178,11 @@ This class is not used for anything at the moment.
     - `~Vector3()`
         - Destructs a Vector3 object.
 - Methods
-    - `bool toScreen(Vector2& screenPosition)`
+    - `bool ToScreen(Vector2& screenPosition)`
         - Converts the 3D world position to a position on the screen. Example:
         ```angelscript
         Vector2 screenPosition;
-        if (worldPosition.toScreen(screenPosition)) {
+        if (worldPosition.ToScreen(screenPosition)) {
             // do something with the screen position
         }
         ```
@@ -212,52 +212,52 @@ This class is not used for anything at the moment.
         ```
     - `Address Add(int64 value)`
         - Adds the specified value to the address, and returns it in a new Address object.
-    - `Address findPattern(const string& idaStylePattern)`
+    - `Address FindPattern(const string& idaStylePattern)`
         - Finds the specified IDA style pattern in memory, and returns it in a new Address object. Example:
         ```angelscript
-        address = address.findPattern("48 8D 05 ? ? ? ? 48 89 1D");
+        address = address.FindPattern("48 8D 05 ? ? ? ? 48 89 1D");
         ```
     - `Address Reference(int idx = 0)`
         - Finds a reference in memory to the address at the specified idx, and returns it in a new Address object.
-    - `uint64 toUint64()`
+    - `uint64 ToUint64()`
         - Returns the raw uint64 address.
-    - `Module& getModule()`
+    - `Module& GetModule()`
         - Returns the underlying module.
 
 ## Module
 `In namespace: Modules`
 - Methods
-    - `Address findPattern(const string& idaStylePattern, uint64 start = 0, uint64 end = 0)`
+    - `Address FindPattern(const string& idaStylePattern, uint64 start = 0, uint64 end = 0)`
         - Finds the specified IDA style pattern in memory (within the start and end bounds if specified), and returns it in a new Address object. Example:
         ```angelscript
-        Address address = Modules::Main().findPattern("48 8D 05 ? ? ? ? 48 89 1D");
+        Address address = Modules::Main().FindPattern("48 8D 05 ? ? ? ? 48 89 1D");
         ```
-    - `uint64 getStart()`
+    - `uint64 GetStart()`
         - Returns the location in memory where the module starts.
-    - `uint64 getEnd()`
+    - `uint64 GetEnd()`
         - Returns the location in memory where the module ends.
-    - `string getName()`
+    - `string GetName()`
         - Returns the name of the module.
 
 ## Actor
 - Methods
-    - `Vector3 getLocation()`
+    - `Vector3 GetLocation()`
         - Returns the 3D location of the actor in the worlds.
-    - `bool isA(const uint64 compareClass)`
+    - `bool IsA(const uint64 compareClass)`
         - Returns whether or not the actor inherits from the compare class. Useful for actor filtering. Take a look at [this example](/examples?id=filtering-actors).
-    - `string getString(const string& className, const string& fieldName)`
+    - `string GetString(const string& className, const string& fieldName)`
         - Returns the FString value stored at the specified field in the specified class. Use [this site](https://ark.dumps.host) to find the class and field names. (It expects the class name without the A or U prefix.) Example:
         ```angelscript
-        string dinoName = dino.getString("PrimalCharacter", "DescriptiveName");
+        string dinoName = dino.GetString("PrimalCharacter", "DescriptiveName");
         ```
-    - `int getInt(const string& className, const string& fieldName)`
+    - `int GetInt(const string& className, const string& fieldName)`
         - Returns the integer value stored at the specified field in the specified class. Use [this site](https://ark.dumps.host) to find the class and field names. (It expects the class name without the A or U prefix.) Example:
         ```angelscript
-        int targetingTeam = actor.getInt("Actor", "TargetingTeam");
+        int targetingTeam = actor.GetInt("Actor", "TargetingTeam");
         ```
-    - `string getObjectName()`
+    - `string GetObjectName()`
         - Returns the Unreal Engine object name.
-    - `string getFullObjectName()`
+    - `string GetFullObjectName()`
         - Returns the full Unreal Engine object name.
-    - `uint64 getAddress()`
+    - `uint64 GetAddress()`
         - Returns the address of the Actor in memory. Useful to perform read and write operations on it.

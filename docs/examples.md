@@ -6,22 +6,22 @@ This page provides a few example scripts. If you've made a useful script and thi
 bool drawText = false;
 Color textColor = Color(255, 255, 255, 255);
 
-void onRender() {
+void OnRender() {
     if (drawText) {
-        Fonts::Font@ menuTextFont = Fonts::getMenuTextFont();
+        Fonts::Font@ menuTextFont = Fonts::GetMenuTextFont();
 
         // Changing the size of an existing font
-        float originalSize = menuTextFont.setSize(50.f);
+        float originalSize = menuTextFont.SetSize(50.f);
         Render::Text(menuTextFont, Vector2(100, 100), textColor, Render::OUTLINE, "Example text");
-        menuTextFont.setSize(originalSize);
+        menuTextFont.SetSize(originalSize);
     }
 }
 
-void main() {
-    Gui::Tab@ scriptTab = Gui::getMainWindow().addTab("Script");
-    Gui::Groupbox@ groupbox = scriptTab.addGroupbox("Script groupbox", Vector2(100, 100));
-    Gui::Checkbox@ checkbox = groupbox.addCheckbox("Draw text", drawText);
-    checkbox.addColorPicker("Text color", textColor);
+void Main() {
+    Gui::Tab@ scriptTab = Gui::GetMainWindow().AddTab("Script");
+    Gui::Groupbox@ groupbox = scriptTab.AddGroupbox("Script groupbox", Vector2(100, 100));
+    Gui::Checkbox@ checkbox = groupbox.AddCheckbox("Draw text", drawText);
+    checkbox.AddColorPicker("Text color", textColor);
 }
 ```
 > ![Creating and using GUI elements image](https://i.imgur.com/em6xkYT.png)
@@ -29,19 +29,19 @@ void main() {
 ## Creating a toggleable Window
 ```angelscript
 Gui::Window@ scriptWindow = null;
-void main() {
+void Main() {
     Vector2 windowSize = Vector2(600, 400);
-    Vector2 windowPos = Render::getScreenSize();
+    Vector2 windowPos = Render::GetScreenSize();
     windowPos.x = (windowPos.x - windowSize.x) / 2;
     windowPos.y = (windowPos.y - windowSize.y) / 2;
 
-    @scriptWindow = Gui::addWindow("Script window", "This window was created by a script.", windowPos, windowSize);
+    @scriptWindow = Gui::AddWindow("Script window", "This window was created by a script.", windowPos, windowSize);
 }
 
-void onRender() {
+void OnRender() {
     // VK_F1 = 0x70
-    if (Input::keyPressed(0x70)) {
-        Gui::setWindowOpened(scriptWindow, !scriptWindow.isOpen());
+    if (Input::KeyPressed(0x70)) {
+        Gui::SetWindowOpened(scriptWindow, !scriptWindow.IsOpen());
     }
 }
 ```
@@ -49,10 +49,10 @@ void onRender() {
 
 ## Rendering Actors
 ```angelscript
-void onActor(Actor& actor) { 
+void OnActor(Actor& actor) { 
     Vector2 screenPos;
-    if (actor.getLocation().toScreen(screenPos)) {
-        Render::Text(Fonts::getEspFont(), screenPos, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, actor.getObjectName()); 
+    if (actor.GetLocation().ToScreen(screenPos)) {
+        Render::Text(Fonts::GetEspFont(), screenPos, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, actor.GetObjectName()); 
     }
 }
 ```
@@ -64,39 +64,39 @@ This script shows how to filter actors, and renders a simple name esp.
 uint64 playerClass = 0;
 uint64 dinoClass = 0;
 
-void main() {
+void Main() {
     // Initialize the actor classes, we do this in the main callback as we should only do this once.
     // Finding an Unreal Engine object can be inefficient.
-    playerClass = Engine::findObject("Class ShooterGame.ShooterCharacter");
-    dinoClass = Engine::findObject("Class ShooterGame.PrimalDinoCharacter");
+    playerClass = Engine::FindObject("Class ShooterGame.ShooterCharacter");
+    dinoClass = Engine::FindObject("Class ShooterGame.PrimalDinoCharacter");
 }
 
-void renderPlayerEsp(Actor& player) {
+void RenderPlayerEsp(Actor& player) {
     Vector2 screenPosition;
-    if (player.getLocation().toScreen(screenPosition)) {
+    if (player.GetLocation().ToScreen(screenPosition)) {
         // Because the actor inherits from the player class (ShooterCharacter) we can access the PlayerName field.
-        string playerName = player.getString("ShooterCharacter", "PlayerName");
-        Render::Text(Fonts::getEspFont(), screenPosition, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, playerName);
+        string playerName = player.GetString("ShooterCharacter", "PlayerName");
+        Render::Text(Fonts::GetEspFont(), screenPosition, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, playerName);
     }
 }
 
-void renderDinoEsp(Actor& dino) {
+void RenderDinoEsp(Actor& dino) {
     Vector2 screenPosition;
-    if (dino.getLocation().toScreen(screenPosition)) {
+    if (dino.GetLocation().ToScreen(screenPosition)) {
         // Because the actor inherits from the dino class (PrimalDinoCharacter), which inherits from PrimalCharacter we can access the DescriptiveName field.
-        string dinoName = dino.getString("PrimalCharacter", "DescriptiveName");
-        Render::Text(Fonts::getEspFont(), screenPosition, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, dinoName);
+        string dinoName = dino.GetString("PrimalCharacter", "DescriptiveName");
+        Render::Text(Fonts::GetEspFont(), screenPosition, Color(255, 255, 255, 255), Render::CENTER_X | Render::CENTER_Y | Render::OUTLINE, dinoName);
     }
 }
 
-void onActor(Actor& actor) {
+void OnActor(Actor& actor) {
     // Using the isA function to check if the actor inherits from the specified class.
-    if (actor.isA(playerClass)) {
+    if (actor.IsA(playerClass)) {
         // Actor inherits from the player class, so we can render the player esp.
-        renderPlayerEsp(actor);
-    } else if (actor.isA(dinoClass)) {
+        RenderPlayerEsp(actor);
+    } else if (actor.IsA(dinoClass)) {
         // Actor inherits from the dino class, so we can render the dino esp.
-        renderDinoEsp(actor);
+        RenderDinoEsp(actor);
     }
 }
 ```
