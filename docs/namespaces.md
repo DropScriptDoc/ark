@@ -31,6 +31,8 @@ This page lists the available namespaces that can be used in your scripts.
         - Returns the main GUI window.
     - `Window& addWindow(const string& windowName, const string& statusBarText, const Vector2& pos, const Vector2& size)`
         - Adds a window to the GUI. Position and size are in absolute screen pixels.
+    - `void setWindowOpened(const Window& in, const bool opened)`
+        - Opens or closes the specified window. Brings it to the foreground if opened.
 
 ## Input
 - Functions

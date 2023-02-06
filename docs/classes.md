@@ -85,6 +85,8 @@ This page lists the available classes that can be used in your scripts.
 ## Window
 `In namespace: Gui`
 - Methods
+    - `bool isOpen()`
+        - Returns whether or not the window is opened.
     - `Text& addText(const string& text)`
         - Adds the specified text to the next free space in the GUI.
     - `Button& addButton(const string& label, int width, Gui::GuiButtonClb @clb)`

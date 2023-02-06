@@ -26,6 +26,27 @@ void main() {
 ```
 > ![Creating and using GUI elements image](https://i.imgur.com/em6xkYT.png)
 
+## Creating a toggleable Window
+```clike
+Gui::Window@ scriptWindow = null;
+void main() {
+    Vector2 windowSize = Vector2(600, 400);
+    Vector2 windowPos = Render::getScreenSize();
+    windowPos.x = (windowPos.x - windowSize.x) / 2;
+    windowPos.y = (windowPos.y - windowSize.y) / 2;
+
+    @scriptWindow = Gui::addWindow("Script window", "This window was created by a script.", windowPos, windowSize);
+}
+
+void onRender() {
+    // VK_F1 = 0x70
+    if (Input::keyPressed(0x70)) {
+        Gui::setWindowOpened(scriptWindow, !scriptWindow.isOpen());
+    }
+}
+```
+> ![Creating a toggleable Window](https://i.imgur.com/KQvyYJm.png)
+
 ## Rendering Actors
 ```clike
 void onActor(Actor& actor) { 
