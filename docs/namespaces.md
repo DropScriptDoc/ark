@@ -119,6 +119,10 @@ This page lists the available namespaces that can be used in your scripts.
         ```
     - `Vector2 GetScreenSize()`
         - Returns the size of the screen in pixels.
+    - `Texture& ImageToTexture(const array<uint8>& imageData)`
+        - Creates a texture to render from an image byte array. Use [this](https://dropscriptdoc.github.io/image/) site to convert images to a byte array. Only JPG, PNG, TGA, BMP, PSD, HDR and PIC are supported. Take a look at [this](/examples?id=rendering-images) example.
+    `void Texture(const Texture& texture, const Vector2& min, const Vector2& max, const Color& color, const float rounding = 0, const int flags = 0)`
+        - Renders a texture within the specified bounds. Uses the same rounding flags as rectangles. Take a look at [this](/examples?id=rendering-images) example.
 - Globals
     - `int CENTER_X`
         - Can be used with the `Render::Text` function. Centers the text horizontally.

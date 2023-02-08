@@ -186,6 +186,8 @@ This class is not used for anything at the moment.
             // do something with the screen position
         }
         ```
+    - `float DistanceTo(const Vector3& otherVec)`
+        - Calculates the distance in units between both vectors. If you're using world coordinates, the distance will be in centimeters.
 - Fields
     - `float x`
     - `float y`
